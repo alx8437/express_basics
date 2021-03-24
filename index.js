@@ -1,4 +1,4 @@
-import express from "express"
+import express from 'express'
 
 const PORT = 5000;
 
@@ -8,3 +8,6 @@ app.use(express.json())
 
 app.listen(PORT, () => console.log("server started on port " + PORT))
 
+app.get('/', (req, res) => {
+    res.status(200).json('Server is working')
+})
