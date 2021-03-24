@@ -12,3 +12,8 @@ app.get('/', (req, res) => {
     console.log(req.query)
     res.status(200).json('Server is working now')
 })
+
+app.post('/', (req, res) => {
+    console.log(req.body)
+    res.status(200).json("post is success")
+})
