@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add express
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Broadcom\Broadcom 802.11\Driver;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs\;C:\Program Files\JetBrains\WebStorm 2020.1.2\bin;;C:\Users\Sasha\AppData\Local\Yarn\bin;C:\Users\Sasha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Sasha\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  13.6.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\projects\back_node_js\package.json: Unexpected token { in JSON at position 1
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+
+npm manifest: 
+  n{
+    "name": "back_node_js",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
