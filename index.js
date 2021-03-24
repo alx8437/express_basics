@@ -9,5 +9,6 @@ app.use(express.json())
 app.listen(PORT, () => console.log("server started on port " + PORT))
 
 app.get('/', (req, res) => {
-    res.status(200).json('Server is working')
+    console.log(req.query)
+    res.status(200).json('Server is working now')
 })
