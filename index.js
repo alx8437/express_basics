@@ -1,5 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose';
+import Post from './Post.js'
 
 const PORT = 5000;
 const DB_URL="mongodb+srv://admin:admin@cluster0.x6tmo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
@@ -7,17 +8,9 @@ const DB_URL="mongodb+srv://admin:admin@cluster0.x6tmo.mongodb.net/myFirstDataba
 const app = express();
 
 
-//for read posr request need use express.use
+//for read post request need use express.use
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    console.log(req.query)
-    res.status(200).json('Server is working now')
-})
-
-app.post('/', (req, res) => {
-    res.status(200).json(req.body)
-})
 
 async function startApp() {
     try {
@@ -27,5 +20,17 @@ async function startApp() {
         console.log(error)
     }
 }
+
+app.get('/', (req, res) => {
+    console.log(req.query)
+    res.status(200).json('Server is working now')
+})
+
+
+app.post('/', async (req, res) => {
+    const {author, title, content, picture} = req.body
+    const post =  await Post.create({author, title, content, picture})
+    res.status(200).json(post)
+})
 
 startApp()
