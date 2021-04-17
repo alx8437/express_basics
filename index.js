@@ -23,14 +23,19 @@ async function startApp() {
 
 app.get('/', (req, res) => {
     console.log(req.query)
-    res.status(200).json('Server is working now')
+    res.json('Server is working now')
 })
 
 
 app.post('/', async (req, res) => {
-    const {author, title, content, picture} = req.body
-    const post =  await Post.create({author, title, content, picture})
-    res.status(200).json(post)
+    try {
+        const {author, title, content, picture} = req.body
+        const post =  await Post.create({author, title, content, picture})
+        res.json(post)
+    } catch (e) {
+        res.status(500).json(e)
+    }
+
 })
 
 startApp()
