@@ -1,13 +1,13 @@
 import Router from 'express'
 import PostController from "./PostController.js";
 
-
+//Here state our endpoints
 const router = new Router()
 
 router.post('/posts', PostController.create)
-router.get('posts')
-router.get('posts/:id')
-router.put('posts/:id')
-router.delete('posts/:id')
+router.get('/posts', PostController.getAll)
+router.get('/post/:id', PostController.getOne)
+router.put('/posts/:id', PostController.update)
+router.delete('posts/:id', PostController.delete)
 
 export default router;

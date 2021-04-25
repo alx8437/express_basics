@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 
+
+// This is model data
 const Post = new mongoose.Schema({
     author: {type: String, required: true},
     title: {type: String, required: true},
