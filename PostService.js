@@ -1,9 +1,13 @@
 import Post from "./Post.js";
+import fileService from "./fileService.js";
+
+
+//This service for work with DB
 
 class PostService {
-    async create(post) {
-        const {author, title, content, picture} = post
-        const createdPost =  await Post.create({author, title, content, picture})
+    async create(post, picture) {
+        const fileName = fileService.saveFile(picture)
+        const createdPost =  await Post.create({...post, picture: fileName})
         return createdPost
     }
 

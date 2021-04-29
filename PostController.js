@@ -1,10 +1,11 @@
 import PostService from "./PostService.js";
 
 // All logic state in controller
+
 class PostController {
     async create(req, res) {
         try {
-            const post = await PostService.create(req.body)
+            const post = await PostService.create(req.body, req.files.picture)
             return res.json(post)
         } catch (e) {
             res.status(500).json(e.message)
